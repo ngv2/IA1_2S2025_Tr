@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export default function TopBar() {
+export default function Top() {
   const navigate = useNavigate();
 
   const wrap = {
@@ -79,7 +79,7 @@ export default function TopBar() {
       <div style={pill}>
         <button style={brand} onClick={() => navigate("/")}>
           <span style={logo} aria-hidden />
-          <span style={title}>MediLogic</span>
+          <span style={title}>Asistente Salud</span>
         </button>
 
         <nav style={actions} aria-label="primary">

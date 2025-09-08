@@ -95,7 +95,6 @@ export default function LandingPage() {
                 de un especialista en salud, ofreciendo orientación médica inicial y material educativo que ayude al usuario a 
                 comprender mejor su estado de salud.
                 <br />
-                
               </p>
 
               <div style={disclaimer} role="alert">

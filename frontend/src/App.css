@@ -267,3 +267,177 @@
   border-radius: 12px;
   font-size: .95rem;
 }
+
+/* ===== Login Rosa ===== */
+.pink-login-wrap{
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: linear-gradient(180deg, #fde7f1 0%, #fff0f7 60%, #ffffff 100%);
+}
+
+.pink-card{
+  width: 100%;
+  max-width: 440px;
+  background: #fff;
+  border: 1px solid #f1c8d7;          /* rosa pálido */
+  border-radius: 20px;
+  box-shadow: 0 20px 48px rgba(236, 72, 153, .18);
+  padding: 20px;
+}
+
+.pink-header{
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 12px;
+}
+.pink-logo{
+  width: 40px; height: 40px; border-radius: 9999px;
+  background:
+   radial-gradient(circle at 30% 35%, #fecdd3 0 30%, transparent 31%),
+   radial-gradient(circle at 70% 65%, #f9a8d4 0 30%, transparent 31%),
+   radial-gradient(circle at 50% 50%, #f472b6 0 46%, transparent 47%);
+  box-shadow: 0 6px 14px rgba(219, 39, 119, .22);
+}
+.pink-title{
+  margin: 0; font-size: 1.5rem; font-weight: 800;
+  background: linear-gradient(90deg, #ec4899, #f472b6, #fb7185);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.pink-sub{ margin: 2px 0 0; color: #6b7280; }
+
+.pink-form{ display: grid; gap: 10px; margin-top: 8px; }
+.pink-label{ font-size: .95rem; color: #334155; }
+.pink-input{
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow .12s, border-color .12s;
+}
+.pink-input:focus{
+  border-color: #f9a8d4;
+  box-shadow: 0 0 0 4px #fde7f1;
+}
+
+.pink-error{
+  background: #fff0f7;
+  border: 1px solid #f9a8d4;
+  color: #9d174d;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: .95rem;
+}
+
+.pink-btn{
+  margin-top: 6px;
+  background: #ec4899;      /* pink-500 */
+  border: 1px solid #db2777;/* pink-600 */
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .12s, box-shadow .12s, background .12s;
+}
+.pink-btn:hover{ transform: translateY(-1px); box-shadow: 0 8px 22px rgba(236, 72, 153, .18); background: #db2777; }
+.pink-btn:disabled{ opacity: .7; cursor: not-allowed; }
+
+.pink-links{
+  display: grid; gap: 6px;
+  margin-top: 10px;
+  text-align: center;
+}
+.pink-link{ color: #db2777; text-decoration: none; }
+.pink-link:hover{ text-decoration: underline; }
+
+/* Contenedor centrado */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #fde7f1 0%, #fff0f7 60%, #fff 100%);
+}
+
+/* Tarjeta */
+.login-card {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border: 2px solid #f9c4d2;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Título */
+.login-title {
+  color: #db2777;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-sub {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Formulario */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-form label {
+  font-weight: 600;
+  text-align: left;
+  color: #374151;
+}
+
+.login-form input {
+  padding: 10px;
+  border: 1px solid #f9c4d2;
+  border-radius: 10px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.login-form input:focus {
+  border-color: #db2777;
+  box-shadow: 0 0 6px rgba(219, 39, 119, 0.3);
+}
+
+/* Botón */
+.login-form button {
+  background: #ec4899;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+.login-form button:hover {
+  background: #db2777;
+  transform: translateY(-1px);
+}
+
+.login-form button:disabled {
+  background: #f9a8d4;
+  cursor: not-allowed;
+}
+
+/* Error */
+.login-error {
+  color: #dc2626;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+}
