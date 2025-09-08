@@ -1,42 +1,269 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* ===== Pink Pill Bar (rosa + blanco) ===== */
+:root{
+  --ppb-bg: #ffffff;
+  --ppb-border: #f1c8d7;        /* rosa pálido */
+  --ppb-accent: #ec4899;        /* pink-500 */
+  --ppb-accent-600: #db2777;    /* pink-600 */
+  --ppb-ink: #0f172a;           /* slate-900 */
+  --ppb-muted: #6b7280;         /* gray-500 */
+  --ppb-shadow: 0 12px 32px rgba(236, 72, 153, .15);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Degradado sutil del header, como en el ejemplo */
+.ppb-wrap{
+  position: sticky; top: 0; z-index: 60;
+  padding: 18px 16px;
+  background: linear-gradient(180deg, #fff 0%, #fff 35%, #fde7f1 100%);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Píldora centrada, pero ancho completo visual (full-bleed contenedor) */
+.ppb{
+  max-width:none; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px;
+  padding: 10px 14px;
+  background: var(--ppb-bg);
+  border: 1px solid var(--ppb-border);
+  border-radius:20px;
+  box-shadow: var(--ppb-shadow);
+}
+
+
+/* Marca */
+.ppb-brand{
+  display: inline-flex; align-items: center; gap: 10px;
+  background: transparent; border: 0; cursor: pointer;
+}
+.ppb-logo{
+  width: 36px; height: 36px; border-radius: 9999px;
+  background:
+    radial-gradient(circle at 30% 35%, #fecdd3 0 30%, transparent 31%),
+    radial-gradient(circle at 70% 65%, #f9a8d4 0 30%, transparent 31%),
+    radial-gradient(circle at 50% 50%, #f472b6 0 46%, transparent 47%);
+  box-shadow: 0 6px 16px rgba(219, 39, 119, .22);
+}
+.ppb-title{
+  font-weight: 700; color: var(--ppb-ink); letter-spacing: .2px;
+}
+
+/* Navegación */
+.ppb-nav{ display: flex; align-items: center; gap: 10px; }
+
+/* Botones */
+.ppb-btn{
+  text-decoration: none; user-select: none;
+  padding: 10px 18px; border-radius: 9999px; font-weight: 700;
+  border: 1px solid transparent; transition: transform .12s, box-shadow .12s, background .12s, border-color .12s, color .12s;
+}
+.ppb-btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 20px rgba(219, 39, 119, .15); }
+
+/* Variantes */
+.ppb-btn.outline{
+  background: #fff; color: var(--ppb-ink);
+  border-color: #e5e7eb;           /* gray-200 */
+}
+.ppb-btn.outline:hover{ border-color: var(--ppb-accent); color: var(--ppb-accent-600); }
+
+.ppb-btn.fill{
+  background: var(--ppb-accent); color: #fff; border-color: var(--ppb-accent-600);
+}
+.ppb-btn.fill:hover{ background: var(--ppb-accent-600); }
+
+/* Activo (ruta actual) */
+.ppb-btn.active{ outline: 2px solid #fbcfe8; outline-offset: 2px; }
+
+/* Responsive */
+@media (max-width: 680px){
+  .ppb{ padding: 8px 10px; }
+  .ppb-title{ display:none; }          /* oculta el texto del logo para compactar */
+  .ppb-btn{ padding: 8px 14px; font-weight: 600; }
+}
+
+/* ===== Sección MediLogic ===== */
+.mlg-section{
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+.mlg-grid{
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+@media (min-width: 960px){
+  .mlg-grid{ grid-template-columns: 1fr 1fr; }
+}
+
+/* Imagen con forma suave y sombra */
+.mlg-media{
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 18px 48px rgba(219, 39, 119, .18);
+  background: #fff;
+}
+.mlg-media img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  /* efecto “orgánico” suave */
+  clip-path: border-radius;
+}
+
+/* Columna de texto */
+.mlg-copy{ padding: 8px 6px; }
+
+/* Título bonito con degradado rosa */
+.mlg-title{
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  margin: 0 0 10px;
+  line-height: 1.1;
+  background: linear-gradient(90deg, #ec4899 0%, #f472b6 40%, #fb7185 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 8px 20px rgba(236,72,153,.15));
+}
+
+/* Texto principal */
+.mlg-lead{
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  line-height: 1.7;
+  color: #334155; /* slate-700 */
+  margin: 6px 0 14px;
+}
+
+/* Aviso */
+.mlg-disclaimer{
+  background: #ffe4ef;            /* rosa muy claro */
+  border: 1px solid #f9a8d4;      /* pink-300 */
+  color: #9d174d;                 /* pink-800 */
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: .98rem;
+}
+
+/* Contenedor principal */
+.mlg-section{
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Grid responsivo */
+.mlg-grid{
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+@media (min-width: 900px){
+  .mlg-grid{
+    grid-template-columns: 1fr 1fr;
   }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Imagen bonita */
+.mlg-media img{
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(219,39,119,.25);
+  object-fit: cover;
 }
 
-.card {
-  padding: 2em;
+/* Texto */
+.mlg-copy{
+  padding: 10px;
 }
 
-.read-the-docs {
-  color: #888;
+/* Título con degradado */
+.mlg-title{
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 16px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ec4899, #f472b6, #fb7185);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Párrafo */
+.mlg-lead{
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #334155; /* slate-700 */
+  margin-bottom: 20px;
+}
+
+/* Disclaimer */
+.mlg-disclaimer{
+  background: #fff0f7;
+  border: 1px solid #f9a8d4;
+  color: #9d174d;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+}
+
+/* ===== Layout 2 columnas MediLogic (flex + media query) ===== */
+.mlg-wrap{
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 0 20px;
+}
+
+.mlg-row{
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  flex-direction: column;   /* móvil: 1 columna */
+}
+
+@media (min-width: 900px){
+  .mlg-row{ flex-direction: row; }  /* desktop: 2 columnas */
+}
+
+.mlg-col{ flex: 1 1 0; }
+
+/* Imagen elegante */
+.mlg-media img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 14px 36px rgba(219,39,119,.18);
+  object-fit: cover;
+}
+
+/* Texto y estilos */
+.mlg-copy{ padding: 8px; }
+
+.mlg-title{
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 12px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ec4899, #f472b6, #fb7185);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 8px 18px rgba(236,72,153,.15));
+}
+
+.mlg-lead{
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: #334155; /* slate-700 */
+  margin: 6px 0 16px;
+}
+
+.mlg-disclaimer{
+  background: #fff0f7;
+  border: 1px solid #f9a8d4;
+  color: #9d174d;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: .95rem;
 }
