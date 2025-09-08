@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+#queryInput {
+    width: 75%;
+    height: 30px;
+    margin-top: 10px;
+}
+
+#output {
+    width: 80%;
+    height: 150px;
+    margin-top: 10px;
+}
