@@ -98,7 +98,7 @@ export default function Top() {
             onMouseLeave={(e) => { e.currentTarget.style.background = "#ec4899"; }}
             onClick={() => navigate("/diagnostico")}
           >
-            Paciente
+            Diagnostico
           </button>
         </nav>
       </div>

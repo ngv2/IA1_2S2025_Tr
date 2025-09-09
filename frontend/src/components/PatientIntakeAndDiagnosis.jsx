@@ -7,14 +7,27 @@ const API = "http://localhost:8000";
 
 const STYLE_TAG_ID = "patient-intake-styles";
 const BASE_CSS = `
-:root{--bg:#f6f8fb;--txt:#0f172a;--muted:#64748b;--card:#ffffff;--line:#e2e8f0;--brand:#2563eb;--brand-2:#0ea5e9;--good:#059669;--warn:#ca8a04;--bad:#dc2626}
+:root {
+  --bg:#fff5f8;
+  --txt:#0f172a;
+  --muted:#64748b;
+  --card:#ffffff;
+  --line:#ffd1e1;
+  --brand:#ff4d93;   /* color principal botones primary */
+  --brand-2:#ff78ab;
+  --good:#059669;    /* botones success */
+  --warn:#ca8a04;
+  --bad:#dc2626;
+}
+
+{--bg:#f6f8fb;--txt:#0f172a;--muted:#64748b;--card:#ffffff;--line:#e2e8f0;--brand:#2563eb;--brand-2:#0ea5e9;--good:#059669;--warn:#ca8a04;--bad:#dc2626}
 *{box-sizing:border-box}
 body{color:var(--txt)}
 .pi-wrap{min-height:100vh;background:var(--bg)}
 .pi-container{max-width:1120px;margin:0 auto;padding:24px}
 .pi-header h1{font-size:28px;margin:0 0 6px}
 .pi-header p{color:var(--muted);margin:0}
-.pi-banner{margin:16px 0;padding:10px 12px;border:1px solid #fecaca;background:#fee2e2;color:#7f1d1d;border-radius:10px}
+.pi-banner{margin:16px 0;padding:10px 12px;border:1px solid #e28b8bff;background:#fee2e2;color:#7f1d1d;border-radius:10px}
 .pi-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:24px}
 @media(min-width:900px){.pi-grid{grid-template-columns:2fr 1fr}}
 .pi-card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 1px 2px rgba(0,0,0,.05);padding:16px}
@@ -46,6 +59,7 @@ body{color:var(--txt)}
 .pi-pre{white-space:pre-wrap;background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:10px;font-size:12px}
 .pi-skeleton{height:36px;background:linear-gradient(90deg,#f1f5f9, #e2e8f0, #f1f5f9);background-size:200% 100%;animation:shimmer 1.2s infinite}
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
 `;
 
 const SEVERITIES = [
@@ -56,13 +70,16 @@ const SEVERITIES = [
 
 export default function PatientIntakeAndDiagnosis() {
     useEffect(() => {
-        if (!document.getElementById(STYLE_TAG_ID)) {
-            const tag = document.createElement("style");
-            tag.id = STYLE_TAG_ID;
-            tag.innerHTML = BASE_CSS;
-            document.head.appendChild(tag);
-        }
+    let tag = document.getElementById(STYLE_TAG_ID);
+    if (!tag) {
+        tag = document.createElement("style");
+        tag.id = STYLE_TAG_ID;
+        document.head.appendChild(tag);
+    }
+    // siempre actualiza el CSS (soporta HMR)
+    tag.innerHTML = BASE_CSS;
     }, []);
+
 
     const [symptoms, setSymptoms] = useState([]);
     const [medications, setMedications] = useState([]);
