@@ -3,7 +3,7 @@ import LandingPage from "./components/LandingPage.jsx";
 import AdminPage   from "./components/AdminPage.jsx";
 import UserPage    from "./components/UserPage.jsx";
 import LoginAdmin from "./components/LoginAdmin.jsx";
-
+import PatientIntakeAndDiagnosis from "./components/PatientIntakeAndDiagnosis.jsx";
 
 function Dummy({ title }) {
   return (
@@ -20,7 +20,7 @@ export default function App() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/login/admin" element={<LoginAdmin />} />
       <Route path="/admin/page" element={<Dummy title="Administrador" />} />
-      <Route path="/diagnostico" element={<Dummy title="Paciente" />} />
+      <Route path="/diagnostico" element={<PatientIntakeAndDiagnosis />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
