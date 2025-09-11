@@ -20,7 +20,7 @@ export default function App() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/login/admin" element={<LoginAdmin />} />
       <Route path="/admin/page" element={<Dummy title="Administrador" />} />
-      <Route path="/diagnostico" element={<Dummy title="Paciente" />} />
+      <Route path="/diagnostico" element={<PatientIntakeAndDiagnosis/>} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

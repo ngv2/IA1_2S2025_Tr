@@ -4,6 +4,7 @@
 
 ```bash
 cd ./backend/
+go mod tidy
 go run .
 ```
 
