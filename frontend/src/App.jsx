@@ -3,7 +3,7 @@ import LandingPage from "./components/LandingPage.jsx";
 import AdminPage   from "./components/AdminPage.jsx";
 import UserPage    from "./components/Diagnostico.jsx";
 import LoginAdmin from "./components/LoginAdmin.jsx";
-
+import PatientIntakeAndDiagnosis from "./components/PatientIntakeAndDiagnosis.jsx";
 
 function Dummy({ title }) {
   return (
@@ -19,9 +19,8 @@ export default function App() {
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/login/admin" element={<LoginAdmin />} />
-      <Route path="/admin/page" element={<AdminPage />} />
-
-      <Route path="/diagnostico" element={<UserPage />} />
+      <Route path="/admin/page" element={<Dummy title="Administrador" />} />
+      <Route path="/diagnostico" element={<Dummy title="Paciente" />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
