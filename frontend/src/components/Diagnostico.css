@@ -1,0 +1,444 @@
+.plg-page {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fde7f1 0%, #fff0f7 60%, #fff 100%);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+  color: #374151;
+}
+
+/* Topbar */
+.plg-topbar {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #f5c2d7;
+  padding: 12px 24px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.plg-btn-back {
+  background: #ec4899;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background .2s ease, transform .1s ease;
+}
+.plg-btn-back:hover { background: #db2777; transform: translateY(-1px); }
+
+/* Card principal */
+.plg-container {
+  width: 95%;              /* antes estaba en 92% o menos */
+  max-width: 1400px;       /* aumenta el máximo */
+  margin: 1.2rem auto 2.5rem;
+  padding: 2rem;           /* un poco más de espacio interno */
+  background: linear-gradient(180deg, rgba(18,25,51,.75), rgba(22,31,61,.6));
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+
+.plg-container h1 {
+  color: #db2777;
+  margin: 0 0 6px;
+  text-align: center;
+}
+.plg-container h2 {
+  margin: 18px 0 10px;
+  color: #ec4899;
+}
+
+.plg-section {
+  margin: 14px 0 18px;
+}
+
+.plg-section label {
+  font-weight: 600;
+}
+
+.plg-section input[type="file"],
+.plg-section input[type="text"] {
+  width: 100%;
+  margin: 8px 0 12px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #f9c4d2;
+  outline: none;
+  transition: border .2s, box-shadow .2s;
+}
+.plg-section input[type="text"]:focus,
+.plg-section input[type="file"]:focus {
+  border-color: #db2777;
+  box-shadow: 0 0 6px rgba(219,39,119,.25);
+}
+
+.plg-section button {
+  background: #ec4899;
+  border: none;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background .2s ease, transform .1s ease;
+}
+.plg-section button:hover {
+  background: #db2777;
+  transform: translateY(-1px);
+}
+
+#output {
+  width: 100%;
+  margin-top: 18px;
+  min-height: 160px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #f9c4d2;
+  background: #fff5f7;
+  resize: none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* === Grid de 2 columnas === */
+.plg-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* dos columnas iguales */
+  gap: 1.5rem;
+  align-items: start; /* evita que uno se estire raro */
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .plg-grid-2 {
+    grid-template-columns: 1fr; /* en móvil, una sola columna */
+  }
+}
+
+/* Caja blanca */
+.plg-box {
+  background: #ffffff;
+  border: 2px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* === Tema rosita === */
+:root{
+  --bg: #ffe6f1;
+  --panel: #fff0f6;
+  --panel-2: #ffeaf4;
+  --text: #2a2333;
+  --muted: #7a6b79;
+  --brand: #e91e63;      /* rosa principal */
+  --brand-2:#ff5fa2;     /* rosa claro */
+  --danger:#ff6b6b;
+  --ok:#2ecc71;
+  --border: #f3c2d7;
+  --ring: #ff97c2;
+  --shadow: 0 10px 28px rgba(233, 30, 99, .12);
+}
+
+body{
+  background:
+    radial-gradient(1200px 800px at 20% -10%, #ffd4e7 0%, transparent 60%),
+    radial-gradient(1000px 700px at 110% 20%, #ffd9ec 0%, transparent 55%),
+    var(--bg);
+  color:var(--text);
+}
+
+/* Contenedor más clarito y amplio */
+.plg-container{
+  width: 96%;
+  max-width: 1500px;
+  background: linear-gradient(180deg, rgba(255,240,246,.85), rgba(255,234,244,.8));
+  border:1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+/* Títulos en rosa */
+.plg-container h1{
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  -webkit-background-clip: text; background-clip:text; color: transparent;
+}
+.plg-box h2{ color: var(--brand); }
+
+/* Caja blanca de cada sección */
+.plg-box{
+  background:#fff;
+  border:2px solid #f3cfe0;
+  border-radius:16px;
+  padding:1.2rem 1.4rem;
+  box-shadow: 0 6px 18px rgba(233,30,99,.08);
+}
+
+/* Lista interna */
+.plg-card-list{
+  background:#fff7fb;
+  border:1px solid #f4d4e5;
+  border-radius:12px;
+  padding:.75rem;
+  max-height:320px;
+  overflow:auto;
+}
+
+/* Ítems alineados: nombre izq, botones der */
+.plg-list-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.75rem;
+  padding:.55rem .7rem;
+  border-radius:10px;
+  border:1px solid transparent;
+}
+.plg-list-item + .plg-list-item{ margin-top:.35rem; }
+.plg-list-item:hover{
+  background:#ffeef6;
+  border-color:#f6c6dc;
+}
+
+.plg-list-text{
+  font-weight:600;
+  color:#3b2c39;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+
+/* Botones “chip” en rosa */
+.plg-list-actions{ display:flex; gap:.5rem; flex-shrink:0; }
+
+.plg-chip{
+  appearance:none; cursor:pointer;
+  border:1px solid #f3b7cf;
+  background: linear-gradient(180deg, #ff8cbd, #ff70ad);
+  color:#fff; font-weight:700; letter-spacing:.2px;
+  padding:.4rem .7rem; border-radius:999px;
+  box-shadow: 0 4px 12px rgba(233,30,99,.22);
+  transition: transform .06s ease, filter .2s ease, box-shadow .2s ease;
+}
+.plg-chip:hover{ filter:brightness(1.05) }
+.plg-chip:active{ transform: translateY(1px) }
+
+/* Variante contorno (para diferenciar acciones) */
+.plg-chip.outline{
+  background:#fff;
+  color:#d81b60;
+  border:2px solid #f3b7cf;
+  box-shadow:none;
+}
+
+.plg-add-inline{
+  display:grid; grid-template-columns: 1fr auto; gap:.6rem; margin:.6rem 0 1rem;
+}
+.plg-add-inline input[type="text"]{
+  border:1px solid #f3b7cf; background:#fff; color:#3b2c39;
+  border-radius:10px; padding:.6rem .8rem;
+}
+.plg-add-inline button{
+  border:0; border-radius:999px; padding:.55rem 1rem;
+  background: linear-gradient(180deg, #ff8cbd, #ff70ad);
+  color:#fff; font-weight:800; box-shadow: 0 6px 14px rgba(233,30,99,.24);
+}
+
+.plg-add-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.6rem 0 1rem;
+}
+
+.plg-add-inline input[type="text"] {
+  flex: 1; /* ocupa todo el espacio restante */
+}
+
+
+.plg-chip,
+.plg-add-inline button {
+  height: 38px;
+  min-width: 90px;
+}
+
+/* ===== Formulario Medicamentos ===== */
+.plg-form { margin-top:.6rem; }
+
+.plg-form-row{
+  display:grid;
+  grid-template-columns: 180px 1fr;
+  gap:.8rem;
+  align-items:start;
+  margin-bottom:.9rem;
+}
+.plg-form-row label{
+  font-weight:700; color:#d81b60; /* tu rosa principal */
+  padding-top:.45rem;
+}
+.plg-form-row input[type="text"],
+.plg-form-row textarea{
+  width:100%;
+  background:#fff;
+  border:1px solid #f3b7cf;
+  border-radius:10px;
+  padding:.6rem .8rem;
+  color:#2a2333;
+}
+.plg-form-row textarea{ resize:vertical; }
+
+/* selección múltiple de enfermedades */
+.plg-pills{
+  display:flex; flex-wrap:wrap; gap:.5rem;
+  padding:.25rem 0;
+}
+.plg-pill{
+  display:inline-flex; align-items:center; gap:.45rem;
+  border:2px solid #f3b7cf; border-radius:999px;
+  padding:.3rem .6rem; background:#fff;
+  user-select:none; cursor:pointer;
+}
+.plg-pill input{ display:none; }
+.plg-pill span{ color:#d81b60; font-weight:700; }
+.plg-pill.is-active{
+  background: linear-gradient(180deg, #ff8cbd, #ff70ad);
+  border-color: transparent;
+}
+.plg-pill.is-active span{ color:#fff; }
+
+/* Lista de medicamentos */
+.plg-med-list{ margin-top:1rem; display:grid; gap:.8rem; }
+.plg-med-card{
+  background:#fff7fb; border:1px solid #f4d4e5; border-radius:12px; padding: .9rem;
+}
+.plg-med-head{
+  display:flex; justify-content:space-between; align-items:center; gap:.75rem;
+}
+.plg-med-title{ font-weight:800; font-size:1.05rem; color:#3b2c39; }
+.plg-med-body{ margin-top:.6rem; display:grid; gap:.5rem; }
+.plg-label{ font-weight:700; color:#7a6b79; margin-bottom:.2rem; }
+.plg-tags{ display:flex; flex-wrap:wrap; gap:.4rem; }
+.plg-tag{
+  background:#ffe6f1; color:#d81b60; border:1px solid #f3b7cf;
+  border-radius:999px; padding:.2rem .55rem; font-weight:700;
+}
+.plg-text{ color:#3b2c39; }
+
+/* Alineación de botón agregar medicamento */
+.plg-form-actions{ display:flex; justify-content:flex-end; }
+/* Subtítulo pequeño */
+.plg-subtitle{ margin:.2rem 0 .6rem; font-weight:800; color:#d81b60 }
+
+/* Select a juego */
+.plg-select{
+  width:100%;
+  background:#fff;
+  border:1px solid #f3b7cf;
+  border-radius:10px;
+  padding:.6rem .8rem;
+  color:#2a2333;
+}
+
+
+.plg-actions-bottom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 botones iguales */
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+}
+
+.plg-btn {
+  width: 100%;                /* que cada botón ocupe toda su celda */
+  text-align: center;
+  padding: 1rem 0;            /* más altos */
+  font-size: 1rem;            /* un poquito más grandes */
+  border-radius: 14px;        /* menos redondo, más rectangular */
+}
+
+
+/* Botón base */
+.plg-btn{
+  appearance:none;
+  border:0;
+  padding:.7rem 1.1rem;
+  border-radius:999px;
+  font-weight:800;
+  letter-spacing:.2px;
+  cursor:pointer;
+  transition: transform .06s ease, filter .2s ease, box-shadow .2s ease;
+  box-shadow: 0 8px 18px rgba(233, 30, 99, .18);
+  outline: none;
+}
+.plg-btn:active{ transform: translateY(1px); }
+.plg-btn:focus-visible{
+  box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--ring, #ff97c2);
+}
+
+/* Variantes */
+.plg-btn.primary{
+  background: linear-gradient(180deg, #ff8cbd, #ff70ad);
+  color:#fff;
+}
+
+.plg-btn.outline{
+  background:#fff;
+  color:#d81b60;
+  border:2px solid #f3b7cf;
+  box-shadow:none;
+}
+
+.plg-btn.soft{
+  background: linear-gradient(180deg, #ffe6f1, #ffd9ec);
+  color:#d81b60;
+  border:1px solid #f3cfe0;
+}
+
+.plg-btn.mono{
+  background: linear-gradient(180deg, #eceff6, #dfe3ee);
+  color:#2a2333;
+  box-shadow: 0 6px 14px rgba(0,0,0,.08);
+}
+
+/* Hover */
+.plg-btn:hover{ filter:brightness(1.04); }
+
+
+/* Inputs y textarea dentro de los forms */
+.plg-form-row input,
+.plg-form-row textarea,
+.plg-form-row select {
+  width: 100%;
+  max-width: 100%;        /* nunca sobresalir */
+  box-sizing: border-box; /* que respete padding del contenedor */
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #f3b7cf;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.plg-form-row input:focus,
+.plg-form-row textarea:focus,
+.plg-form-row select:focus {
+  border-color: #ff70ad;
+  box-shadow: 0 0 0 3px rgba(255, 112, 173, 0.2);
+}
+
+/* Textarea consistente con inputs */
+.plg-form-row textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Labels */
+.plg-form-row label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #d81b60;
+}
+.plg-form-row {
+  margin-bottom: 1rem;
+}
+
