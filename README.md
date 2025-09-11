@@ -14,3 +14,18 @@ cd ./frontend/
 npm i
 npm run dev
 ```
+
+### Ejecutar RPA (visualizacion)
+
+```bash
+cd ./rpa/
+go build -o rpa_prolog_loader.exe main.go 
+./rpa_prolog_loader.exe C:\path
+```
+
+### Ejecutar RPA (Guardar contenido)
+```bash
+cd ./rpa/
+go build -o rpa_prolog_loader.exe main.go 
+./rpa_prolog_loader.exe C:\path_origen C:\path_destino
+```
