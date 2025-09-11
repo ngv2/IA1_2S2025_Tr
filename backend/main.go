@@ -102,6 +102,7 @@ func main() {
 
 	http.HandleFunc("/api/diagnosis", withCORS(handleDiagnosis))
 
+	http.HandleFunc("/api/diagnosis/pdf", withCORS(handleDiagnosisPDF))
 
 	fmt.Println("Servidor en http://localhost:8000")
 	http.ListenAndServe(":8000", nil)
